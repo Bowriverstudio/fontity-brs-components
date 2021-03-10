@@ -1,7 +1,7 @@
 {
 	"name": "frontity-brs-components",
-	"version": "1.6.0",
-	"description": "Collection of React components for Frontity",
+	"version": "1.7.1",
+	"description": "Collection of React components and helpers for Frontity",
 	"keywords": [
 		"frontity"
 	],
@@ -23,10 +23,5 @@
 		"@types/react-test-renderer": "^16.9.3",
 		"react-test-renderer": "^16.13.1"
 	},
-	"dependencies": {
-		"frontity": "^1.13.0",
-		"@frontity/hooks": "^2.0.2",
-		"@frontity/source": "^1.4.0",
-		"@frontity/router": "^1.1.2"
-	}
+	"dependencies": {}
 }
