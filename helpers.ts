@@ -57,3 +57,18 @@ export function makeProcessor({ tag, component, name, className, priority }: Pro
     };
 }
 
+
+// const processorsConfig = [
+//     {
+//       tag: "practitioner-packages-table",
+//       component: PractitionerPackagesTable,
+//     },
+//     {
+//       tag: "edit-practitioner-profile",
+//       component: EditProfile,
+//     },
+//   ];
+
+export const makeProcessors = (config: Props[]) => config.map((processor) =>
+    makeProcessor({ ...processor })
+);
