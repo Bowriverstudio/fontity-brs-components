@@ -1,3 +1,4 @@
+import { Element, Processor } from "@frontity/html2react/types";
 
 /**
  * Converts a tag from gutenberg's editor to a custom component.
@@ -29,15 +30,30 @@
  * ```
  * 
  */
-export function makeProcessor(tag, component) {
+type Props = {
+    /**
+     * Tag to be matched
+     */
+    tag: string;
+    component: Element;
+    name?: string;
+    className?: string;
+    priority?: number;
+}
+export function makeProcessor({ tag, component, name, className, priority }: Props): Processor<Element> {
     return {
-        name: tag,
-        test: ({ node }) => node.component === tag,
+        name: (name ? name : tag),
+        test: ({ node }) =>
+            node.component === tag &&
+            // If className it must be included other wises it returns true
+            (className ? node.props?.className?.includes(className) : true)
+        ,
         processor: () => {
             return {
                 component: component,
             }
         },
-        priority: 20,
+        priority: (priority ? priority : 20),
     };
 }
+

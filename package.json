@@ -1,6 +1,6 @@
 {
 	"name": "frontity-brs-components",
-	"version": "1.7.1",
+	"version": "2.7.1",
 	"description": "Collection of React components and helpers for Frontity",
 	"keywords": [
 		"frontity"
